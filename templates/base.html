@@ -1,0 +1,30 @@
+<!DOCTYPE html>{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+      <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+
+    <div>
+      <a href="http://127.0.0.1:8000/"> <h1>Главная страница</h1></a>
+      <a href="http://127.0.0.1:8000/catalog/"> <h2>Каталог телофонов</h2></a>
+    </div>
+    {% block content %}
+    <h5>Данный сайт является домашним заданием курса Python developer университета онлайн профессий Нетология по
+      теме Database и представляет из себя просто магазин с ограниченным функционалом. </h5>
+    <h6>для просмотра списка телефонов пройдите по ссылке в каталог.</h6>
+    {% endblock %}
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  </body>
+</html>
