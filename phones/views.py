@@ -5,13 +5,12 @@ from phones.models import Phone
 def show_catalog(request):
     sort_param = request.GET.get('sort')
     template = 'catalog.html'
-    phones = list(Phone.objects.all())
     if sort_param == 'name':
-        phones.sort(key=lambda item: item.name)
+        phones = list(Phone.objects.order_by('name'))
     if sort_param == 'min_price':
-        phones.sort(key=lambda item: item.price)
+        phones = list(Phone.objects.order_by('price'))
     if sort_param == 'max_price':
-        phones.sort(key=lambda item: item.price)
+        phones = list(Phone.objects.order_by('price'))
         phones = reversed(phones)
     context = {
         'phones': phones
